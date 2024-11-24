@@ -1,0 +1,145 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../style/css/.css" />
+	<link rel="stylesheet" href="../style/css/index.css" />
+    <link rel="shortcut icon " type="images/x-icon" href="../style/image/logo.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>衡阳学院 - 学院简介</title>
+</head>
+<body>
+<div class="app">
+<div class="top" id="top">
+	<div class="logo" onclick="window.location.href='../index.jsp?t=衡阳学院'">
+		<img src="../style/image/logo-bai.png" alt="Logo" />
+	</div>
+	<div class="title-h1">
+		<h1>衡阳学院 - 学院简介</h1>
+	</div>
+	<div class="so">
+		<form action="../so.jsp" method="get">
+			<input type="text" name="somsg" placeholder="检索的内容"/>
+			<input type="submit" value="搜索" />
+		</form>
+	</div>
+</div>
+<div class="main">
+<div class="main-all">
+    <p>本项目由衡阳师范学院南岳学院 - 理科综合管理办 - 计算机科学与技术 - 王彪 开发</p>
+	<h1>项目信息</h1>
+	<h2>项目名称</h2><p>《基于JSP的衡阳学院官网平台》</p>
+	<h2>应用版本</h2>
+	<p>v1.0</p>
+	<h2>开发软件</h2>
+	<p>eclipse、Laragon、HBuilder X、Cent Browser</p>
+	<h2>后端服务环境</h2>
+	<p>apache-tomcat-9.0.97，JDK1.8.2</p>
+	<h2>前端运行环境</h2>
+	<p>各系统浏览器平台</p>
+	<h2>数据库</h2>
+	<p>MySQL8.0 UTF-8</p>
+	<hr />
+	<h1>开发设计</h1>
+	<h2>LOGO设计 logo.png</h2>
+	<p>在衡阳师范学院基础上修改为衡阳学院，一个屹立在衡阳市的高等综合类大学，主题为红色</p>
+	<h2>UI设计 hyxyui.png</h2>
+	<p>在衡阳师范学院南岳学院基础上进行设计，将页面进行简化。保留关键部分，重新进行布局开发</p>
+	<h2>首页设计 index.jsp</h2>
+	<h3>首页顶部（通用）.top</h3>
+	<p>顶部采用LOGO+主题+搜索框的设计，LOGO为白色版本，主题根据每一个页面进行按需设置，搜索框输入关键字跳转到so.jsp页面进行数据库信息检索</p>
+	<h3>导航设计 .nev</h3>
+	<p>导航采用居中分段设计，由于页面较少，没有进行设置下拉，点击导航自动跳转到相应的页面</p>
+	<h3>滚动图 .pic</h3><p>采用三张图片轮流播放，由纯CSS实现，展示衡阳学院的校园风采以及校训</p>
+	<h3>主区域 .main</h3>
+	<p>主要分为通知公告、专题报道、账号信息，通知公告为数据库的info表的全部信息，根据倒序读取wid的15项，点击公告采用get方式带着wid可以进入到info.jsp的文章展示页；专题报道为数据库的info的type=“专题报道”的倒序读取3项展示，点击专题采用get方式带着wid可以进入到info.jsp的文章展示页；账号信息：登录时就显示用户名和退出登录按钮，未登录时展示登录的输入框</p>
+	<h3>底部设计（通用）.bottom.jsp</h3>
+	<p>展示联系信息、版权以及访问量、时间，返回顶部通过ID返回定位到top，反馈问题点击跳转到王彪的QQ</p>
+	<h2>登录 index.jsp</h2>
+	<p>用户在首页输入账号、密码点击登录，跳转到后端api/back_logon.jsp页面进行学号或者用户名和密码的验证，连接数据库，验证，记录cookie，返回信息，关闭数据库连接</p>
+	<h2>注册 login.jsp</h2>
+	<p>用户点击首页的“没有账号？注册”，跳转到login.jsp页面，用户输入用户名、学号、密码、确认密码之后点击Login进行注册，将数据进行POST发送到后端API/back_login.jsp进行处理，验证是否密码与确认密码是否相同，检查学号和用户名是否已经被注册了，然后在将密码进行md5加密，写入到数据库Users中存储</p>
+	<h2>文章详细（通用）info.jsp</h2>
+	<p>用户通过点击公告通知、专题报道、精品推荐、教育教学的链接进入到文章详细页面，会将通过GET获取的wid参数进行验证操作，再进行查询数据库操作，将info的数据库内容进行读取再进行展示，如果有图片验证并展示图片在标题下面，文章底部还带有打印和分享，是通过js的原始代码操作的</p>
+	<h2>搜索功能（通用）so.jsp</h2>
+	<p>用户通过其他页面的输入点击搜索，通过POST将somsg搜索内容提交到so.jsp，so.jsp将获取到发送的数据，在数据库中进行info数据库title字段匹配%somsg%，将数据库返回的数据展示在页面上，若返回的文章信息没有图片，将默认展示logo_min.png的LOGO图标。如果不输入则展示全部的文章</p>
+	<h1>数据库设计</h1>
+	<h2>数据库信息</h2>
+	<ul>
+		<li>jdbc:mysql://localhost:3306/hengyang</li>
+		<li>hengyang</li>
+		<li>hengyang</li>
+	</ul>
+	<h2>用户表设计 users</h2>
+	<ul>
+		<li>uid int(5) 主键、不为空、自动递增</li>
+		<li>username vachar(15) 不为空 用户名</li>
+		<li>password vachar(50) 不为空 密码</li>
+		<li>sno char(12) 不为空 学号</li>
+		<li>State int(1) 不为空 默认为2 状态</li>
+	</ul>
+	<h2>文章表设计 info</h2>
+	<ul>
+		<li>wid int(8) 主键、不为空、自动递增</li>
+		<li>username vachar(15) 不为空 用户名</li>
+		<li>title vachar(30) 不为空 标题</li>
+		<li>msg text 不为空 文章内容</li>
+		<li>time vachar(25) 不为空 默认为2024-11-20 10:10 发布时间</li>
+		<li>State int(1) 不为空 默认为2 状态</li>
+	</ul>
+	<h1>文件目录作用</h1>
+	<h2>api</h2>
+	<p>后端jsp文件，用于处理前端的数据</p>
+	<h2>page</h2>
+	<p>页面文件，主要是首页导航跳转的页面</p>
+	<h2>style</h2>
+	<p>JS脚本、CSS样式、fonts字体、image图片文件</p>
+	<ul>
+		<li>JS脚本</li>
+		<li>CSS/index.css等页面样式</li>
+		<li>fonts字体文件</li>
+		<li>image/logo.png等图片文件</li>
+	</ul>
+	<h2>WEB-INF</h2>
+	<p>引入的支撑jar文件，以及记录访问次数的coll.txt文件</p>
+	<ul>
+		<li>javax.servlet-api-4.0.1.jar</li>
+		<li>mysql-connector-j-9.1.0.jar</li>
+		<li>standard.jar</li>
+		<li>jstl.jar</li>
+	</ul>
+	<hr />
+	<h1>致谢</h1>
+	<h2>清华镜像站</h2>
+	<p>方便下载软件以及支撑包</p>
+	<h2>JavaWeb老师</h2>
+	<p>魏书堤老师，课程的指导，实训的指导，以及本次任务的提起</p>
+	<h2>百度·文心一言</h2>
+	<p>解决问题，优化写法</p>
+	<h2>CSDN博客、博客园</h2>
+	<p>解决各种配置、编写问题</p>
+	<h2>My</h2>
+	<p>自己通过一天一夜的战斗努力学习jsp以及编写程序</p>
+	<h2>室友</h2>
+	<p>敲代码到凌晨5点，给予的包容</p>
+	<h2>衡阳师范学院</h2>
+	<p>LOGO根据本学院进行更改的</p>
+	<h2>衡阳师范学院南岳学院</h2>
+	<p>首页设计根据南岳学院简化更改的</p>
+	<hr />
+	<h1>问题优化</h1>
+	<ul>
+		<li>手机端适配度不高</li>
+		<li>连接数据库操作可单独一个文件</li>
+		<li>JSP代码与java代码未分离</li>
+		<li>未完善数据提交的安全性</li>
+		<li>未后台管理系统的设计</li>
+		<li>代码了解依据不太熟练</li>
+		<li>未实现前后端分离</li>
+		<li>……</li>
+	</ul>
+</div>
+</div>
+<%@ include file="../bottom.jsp" %>

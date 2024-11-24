@@ -1,0 +1,62 @@
+/* 假设已有的通用样式 */
+.education-section, .course-section {
+    margin-bottom: 40px;
+}
+
+.news-list, .course-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.news-item, .course-item {
+    flex: 1;
+    min-width: 300px;
+    max-width: 45%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover, .course-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.news-img, .course-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.news-item h3, .course-item h3 {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #333;
+}
+
+.news-item p, .course-item p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.read-more, .enroll-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover, .enroll-btn:hover {
+    background-color: #0056b3;
+}

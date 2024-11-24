@@ -1,0 +1,41 @@
+/* 假设已有的样式 */
+.zhaosheng-section, .jiuye-section {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.zhaosheng-section h2, .jiuye-section h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.zhaosheng-list, .jiuye-list {
+    list-style: none;
+    padding: 0;
+}
+
+.zhaosheng-list li, .jiuye-list li {
+    margin-bottom: 20px;
+}
+
+.zhaosheng-list h3, .jiuye-list h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.zhaosheng-list p, .jiuye-list p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.zhaosheng-list ul {
+    list-style: disc;
+    padding-left: 20px;
+}

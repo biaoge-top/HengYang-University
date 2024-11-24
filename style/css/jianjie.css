@@ -1,0 +1,56 @@
+
+/* .main-all {
+    background-color: #fff;
+    padding: 0 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 80vh;
+} */
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+	padding-top: 30px;
+	margin: auto 0;
+    gap: 20px;
+}
+
+.about-school, .campus-map, .news-section {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+
+.about-school h2, .campus-map h2, .news-section h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.about-school p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.campus-map img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.news-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.news-section ul li {
+    margin-bottom: 10px;
+}
+
+.news-section ul li a {
+    text-decoration: none;
+    color: #007BFF;
+}

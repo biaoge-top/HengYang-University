@@ -1,0 +1,93 @@
+/* 搜索提示样式 */
+.search-tips {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* 搜索结果样式 */
+.search-results {
+    margin-bottom: 20px;
+}
+
+.search-results h2 {
+    margin-top: 0;
+}
+
+.search-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.search-item a{
+	display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.search-item:hover {
+    background-color: #f9f9f9;
+}
+
+.search-icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.search-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.search-description {
+    font-size: 14px;
+    color: #666;
+}
+
+/* 没有搜索结果的样式 */
+.no-results {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #999;
+}
+
+/* 推荐内容样式 */
+.recommended-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.recommended-item {
+    width: calc(50% - 10px); /* 两个项目一行，有间距 */
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.recommended-item:hover {
+    background-color: #f9f9f9;
+}
+
+.recommended-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.recommended-title {
+    font-size: 16px;
+    font-weight: bold;
+}

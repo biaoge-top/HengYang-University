@@ -1,0 +1,39 @@
+/* 假设已有的通用样式 */
+.departments {
+    margin-bottom: 20px;
+}
+
+.department-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.department {
+    flex: 1;
+    min-width: 250px;
+    background-color: #fafafa;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.department-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.department h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.department p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+}
